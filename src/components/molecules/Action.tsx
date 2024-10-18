@@ -1,5 +1,5 @@
-import PlaceholderIcon from "@/assets/icons/PlaceholderIcon";
-import ShopCartIcon from "@/assets/icons/ShopCart";
+import { PlaceholderIcon, ShopCartIcon } from "@/assets/icons";
+
 import Button from "@/components/atoms/Button";
 
 export default function Action() {

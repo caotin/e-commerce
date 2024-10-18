@@ -1,5 +1,5 @@
 import Button from "@/components/atoms/Button";
-import Searchbar from "@/components/atoms/Search";
+import Searchbar from "@/components/atoms/Searchbar";
 
 import { category } from "@/_mock/category";
 

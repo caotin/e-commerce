@@ -24,6 +24,9 @@ const config: Config = {
       fontSize: {
         "29": " 1.81rem",
       },
+      backgroundColor: {
+        gradient: `https://www.joshwcomeau.com/gradient-generator/?colors=0d6efd|ffffff&angle=50&colorMode=hsv&precision=1&easingCurve=0.2974137931034483|0.7052128232758621|0.6379310344827587|0.18797144396551724;`,
+      },
     },
   },
   plugins: [],

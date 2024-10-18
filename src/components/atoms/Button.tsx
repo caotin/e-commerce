@@ -2,13 +2,13 @@ import Link from "next/link";
 
 interface ButtonProps {
   children?: React.ReactNode;
+  className?: string;
+
   to?: string;
   href?: string;
   onClick?:
     | React.MouseEventHandler<HTMLButtonElement>
     | React.TouchEventHandler<HTMLButtonElement>;
-
-  className?: string;
 }
 
 export default function Button({

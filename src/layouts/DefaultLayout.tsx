@@ -1,5 +1,5 @@
-import Header from "@/components/organisms/Header/page";
-import Navbar from "@/components/organisms/Navbar/page";
+import Header from "@/components/organisms/Header";
+import Navbar from "@/components/organisms/Navbar";
 
 interface Children {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export default function DefaultLayout({ children }: Children) {
     <div>
       <Header />
       <Navbar />
-      <main>{children}</main>
+      {children}
     </div>
   );
 }

@@ -1,5 +1,4 @@
-import ClearIcon from "@/assets/icons/ClearIcon";
-import SearchIcon from "@/assets/icons/SearchIcon";
+import { ClearIcon, SearchIcon } from "@/assets/icons";
 import Button from "./Button";
 import { useEffect, useState } from "react";
 
@@ -23,7 +22,7 @@ export default function Searchbar() {
   };
 
   return (
-    <div className="px-2 py-[7px] flex gap-[6px] border rounded-md focus-within:border-primary">
+    <div className="w-full px-2 py-[7px] flex items-center gap-[6px] max-sm:border rounded-md focus-within:border-primary">
       <div className="p-1">
         <SearchIcon />
       </div>
@@ -32,11 +31,10 @@ export default function Searchbar() {
         placeholder="Search"
         className="w-full text-[16px] leading-4 outline-none"
         onChange={(e) => setValue(e.target.value)}
-        value={value}
       />
       {showClearButton && (
         <Button
-          className="w-[23px] h-[23px] ml-10 flex items-center justify-center text-primary"
+          className="w-[23px] h-[23px] max-sm:ml-10 flex items-center justify-center text-primary"
           onClick={handleClick}
         >
           <ClearIcon />
