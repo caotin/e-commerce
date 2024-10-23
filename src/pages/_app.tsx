@@ -14,6 +14,11 @@ const myFont = localFont({
       weight: "700",
       style: "normal",
     },
+    {
+      path: "./fonts/Inter_28pt-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
   ],
   display: "swap",
 });

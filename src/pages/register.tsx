@@ -58,7 +58,7 @@ export default function Register() {
               className="w-full py-2 bg-primary text-white rounded-lg"
               onClick={handleSubmit}
             >
-              Login
+              Register
             </Button>
           </form>
         </div>

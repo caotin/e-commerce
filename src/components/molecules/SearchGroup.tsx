@@ -9,18 +9,17 @@ import { category } from "@/_mock/category";
 export default function SearchGroup() {
   return (
     <div className="w-full max-w-[665px] hidden sm:flex ">
-      <div className="flex flex-1 items-center border-2 border-r-0 focus-within:border-primary rounded-[6px_0_0_6px]">
+      <div className="flex flex-1 items-center border-2 border-r-0 focus-within:border-primary rounded-l-md">
         <Searchbar />
         <Select />
       </div>
-      <Button className="px-7 py-2 text-white bg-primary rounded-[0_6px_6px_0]">
+      <Button className="px-7 py-2 text-white bg-primary rounded-r-md">
         Search
       </Button>
     </div>
   );
 }
 
-/* ====================================================================================== */
 /* ---------------------------------- Search category ----------------------------------- */
 function Select() {
   /* ----- Show & hide dropdown ----- */
@@ -44,7 +43,7 @@ function Select() {
         </div>
       </div>
       {isOpen && (
-        <ul className="w-full py-2 border rounded-md box-border absolute top-11">
+        <ul className="w-full py-2 bg-white border rounded-md box-border absolute top-11">
           {category.map((option) => (
             <li
               key={option}

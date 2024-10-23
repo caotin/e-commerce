@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface ButtonProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
 
   to?: string;

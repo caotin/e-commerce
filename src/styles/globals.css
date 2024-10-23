@@ -5,8 +5,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --gray-8b: #8b96a5;
   --primary: #0d6efd;
+  --blue-55: #55bdc3;
+  --blue-e3: #e3f0ff;
+  --dark-1c: #1c1c1c;
+  --gray-50: #505050;
+  --gray-60: #606060;
+  --gray-8b: #8b96a5;
+  --gray-de: #dee2e7;
+  --orange-f3: #f38332;
+  --red-eb: #eb001b;
+  --red-ff: #ffe3e3;
 }
 
 @media (prefers-color-scheme: dark) {
