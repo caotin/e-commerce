@@ -5,6 +5,7 @@ interface InputProps {
   className?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   validate?: string;
+  StartIcon?: React.ReactNode;
 }
 
 export default function Input({
@@ -14,16 +15,20 @@ export default function Input({
   className = "",
   onChange,
   validate,
+  StartIcon,
 }: InputProps) {
   return (
     <div
-      className={`${validate} w-full max-w-[314px] flex items-center border focus-within:border-primary rounded-md`}
+      className={`${validate} w-full flex items-center border focus-within:border-primary rounded-md`}
     >
+      {StartIcon}
       <input
         autoComplete={autoComplete}
         type={type}
         placeholder={placeholder}
-        className={className + " flex-1 mx-4 my-2 outline-none"}
+        className={
+          className + " flex-1 ml-[6px] my-2 bg-transparent outline-none"
+        }
         onChange={onChange}
       />
     </div>

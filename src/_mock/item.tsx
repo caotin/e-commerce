@@ -7,23 +7,27 @@ export const item = [
 ];
 
 export const householdItems = [
-  { image: "", title: "Soft chairs", price: "From USD 19" },
-  { image: "", title: "Sofa & chair", price: "From USD 19" },
-  { image: "", title: "Kitchen dishes", price: "From USD 19" },
-  { image: "", title: "Smart watches", price: "From USD 19" },
-  { image: "", title: "Kitchen mixer", price: "From USD 100" },
-  { image: "", title: "Blenders", price: "From USD 39" },
-  { image: "", title: "Home appliance", price: "From USD 19" },
-  { image: "", title: "Coffee maker", price: "From USD 10" },
+  { image: "/Item/rasm1.png", title: "Soft chairs", price: "USD 19" },
+  { image: "/Item/image92.png", title: "Sofa & chair", price: "USD 19" },
+  { image: "/Item/image93.png", title: "Kitchen dishes", price: "USD 19" },
+  { image: "/Item/image87.png", title: "Smart watches", price: "USD 19" },
+  { image: "/Item/image88.png", title: "Kitchen mixer", price: "USD 100" },
+  { image: "/Item/image89.png", title: "Blenders", price: "USD 39" },
+  { image: "/Item/image90.png", title: "Home appliance", price: "USD 19" },
+  { image: "/Item/image91.png", title: "Coffee maker", price: "USD 10" },
 ];
 
 export const electronicsItem = [
-  { image: "", title: "Smart watches", price: "From USD 19" },
-  { image: "", title: "Cameras", price: "From USD 89" },
-  { image: "", title: "Headphones", price: "From USD 10" },
-  { image: "", title: "Smart watches", price: "From USD 90" },
-  { image: "", title: "Gaming set", price: "From USD 35" },
-  { image: "", title: "Laptops & PC", price: "From USD 340" },
-  { image: "", title: "Smartphones", price: "From USD 19" },
-  { image: "", title: "Electric kattle", price: "From USD 240" },
+  { image: "/Item/rasm.png", title: "Smart watches", price: "USD 19" },
+  { image: "/Item/image87.png", title: "Smart watches", price: "USD 90" },
+  { image: "/Item/image88.png", title: "Gaming set", price: "USD 35" },
+  { image: "/Item/image89.png", title: "Laptops & PC", price: "USD 340" },
+  { image: "/Item/image90.png", title: "Smartphones", price: "USD 19" },
+  {
+    image: "/Item/image91.png",
+    title: "Electric kattle",
+    price: "From USD 240",
+  },
+  { image: "/Item/image92.png", title: "Cameras", price: "From USD 89" },
+  { image: "/Item/image93.png", title: "Headphones", price: "From USD 10" },
 ];
