@@ -2,7 +2,7 @@ interface Prop {
   className?: string;
 }
 
-export default function ArrowRight({ className }: Prop) {
+export default function AppstoreIcon({ className }: Prop) {
   return (
     <svg
       className={className}

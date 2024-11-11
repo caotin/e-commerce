@@ -2,7 +2,7 @@ interface InputProps {
   autoComplete?: string;
   type: string;
   placeholder?: string;
-  className?: string;
+  value?: string | number;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   validate?: string;
   StartIcon?: React.ReactNode;
@@ -12,7 +12,7 @@ export default function Input({
   autoComplete,
   type = "text",
   placeholder,
-  className = "",
+  value,
   onChange,
   validate,
   StartIcon,
@@ -26,9 +26,8 @@ export default function Input({
         autoComplete={autoComplete}
         type={type}
         placeholder={placeholder}
-        className={
-          className + " flex-1 ml-[6px] my-2 bg-transparent outline-none"
-        }
+        className="w-full ml-[6px] my-2 bg-transparent outline-none"
+        value={value}
         onChange={onChange}
       />
     </div>

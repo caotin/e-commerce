@@ -1,17 +1,18 @@
-import Button from "@/components/atoms/Button";
-import DefaultLayout from "@/layouts/DefaultLayout";
 import Image from "next/image";
+import DefaultLayout from "@/layouts/DefaultLayout";
 
 import {
-  ArrowRight,
+  ArrowRightIcon,
   InventoryIcon,
   SearchIcon,
   SecurityIcon,
   SendIcon,
 } from "@/assets/icons";
 import Input from "@/components/atoms/Input";
+import Button from "@/components/atoms/Button";
 import Dropdown from "@/components/atoms/Dropdown";
 import Newsietter from "@/components/organisms/Newsietter";
+import Navbar from "@/components/organisms/Navbar";
 
 import { item, householdItems, electronicsItem } from "@/_mock/item";
 import { category, norm } from "@/_mock/category";
@@ -20,6 +21,7 @@ import { flatlist } from "@/_mock/flatlist";
 export default function Home() {
   return (
     <DefaultLayout>
+      <Navbar />
       <div className="mb-[46px] flex justify-center">
         <div className="w-full max-w-[1180px] mx-4 lg:mx-[131px] sm:mt-5 flex flex-col gap-[10px]">
           <Main />
@@ -241,7 +243,7 @@ function Block({ title, image, item }: BlockProps) {
       </div>
       <div className="p-[10px] sm:hidden border-b">
         <Button className="p-[9px_9px_9px_13px] flex items-center gap-[6px] text-primary text-[16px] font-medium leading-[19px]">
-          Source now <ArrowRight />
+          Source now <ArrowRightIcon />
         </Button>
       </div>
     </div>
@@ -279,11 +281,7 @@ function Inquiry() {
           <h4 className="pb-[18px] text-xl font-semibold tracking-[-0.013em]">
             Send quote to suppliers
           </h4>
-          <Input
-            type="text"
-            placeholder="What item you need?"
-            className="bg-transparent"
-          />
+          <Input type="text" placeholder="What item you need?" />
           <textarea
             placeholder="Type more details"
             className="w-full h-[73px] my-5 p-[11px] border focus:border-primary rounded-md outline-none appearance-none"

@@ -29,10 +29,10 @@ export default function Button({
 
   if (to) {
     props.to = to;
-    Comp = Link;
+    Comp = "a";
   } else if (href) {
     props.href = href;
-    Comp = "a";
+    Comp = Link;
   }
 
   return <Comp {...props}>{children}</Comp>;
