@@ -12,12 +12,7 @@ export default function Newsietter() {
         Get daily news on upcoming offers from many suppliers all over the world
       </p>
       <div className="flex justify-center gap-2">
-        <Input
-          type="email"
-          placeholder="Email"
-          validate={"pl-[8px]"}
-          StartIcon={<EmailIcon />}
-        />
+        <Input type="email" placeholder="Email" StartIcon={<EmailIcon />} />
         <Button className="px-4 text-white bg-primary rounded-md">
           Subscribe
         </Button>

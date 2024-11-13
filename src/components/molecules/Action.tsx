@@ -11,7 +11,10 @@ export default function Action() {
       <Button className="w-6 h-6 flex items-center justify-center">
         <ShopCartIcon />
       </Button>
-      <Button className="w-6 h-6 flex items-center justify-center">
+      <Button
+        className="w-6 h-6 flex items-center justify-center"
+        href="profile"
+      >
         <PlaceholderIcon />
       </Button>
     </div>

@@ -12,7 +12,7 @@ export default function DotIcon({ className }: Prop) {
       viewBox="0 0 6 6"
       fill="none"
     >
-      <circle cx="3" cy="3" r="3" fill="#DEE2E7" />
+      <circle cx="3" cy="3" r="3" fill="currentColor" />
     </svg>
   );
 }

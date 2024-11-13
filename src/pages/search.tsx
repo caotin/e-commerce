@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import { DotIcon, HeartIcon } from "@/assets/icons";
+import { DotIcon, HeartIcon, NavArrowRightIcon } from "@/assets/icons";
 import Button from "@/components/atoms/Button";
 import Input from "@/components/atoms/Input";
 import Filter from "@/components/atoms/FilterOption";
@@ -10,6 +10,8 @@ import Newsietter from "@/components/organisms/Newsietter";
 import Breadcrumb from "@/components/organisms/Breadcrumb";
 import Checkbox from "@/components/molecules/Checkbox";
 import Navbar from "@/components/organisms/Navbar";
+import ListProduct from "@/components/organisms/ListProduct";
+import Dropdown from "@/components/atoms/Dropdown";
 
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { category } from "@/_mock/category";
@@ -20,11 +22,12 @@ export default function Home() {
     <DefaultLayout>
       <Navbar />
       <Breadcrumb breadcrumb={["Clothings", "Men’s wear", "Summer clothing"]} />
-      <div className="m-[10px] sm:m-0 flex justify-center items-center">
-        <div className="w-full max-w-[1180px] mx-4 lg:mx-[131px] sm:mb-[167px] sm:grid sm:grid-cols-[230px_1fr] sm:gap-[28px]">
+      <div className="sm:m-0 flex flex-col justify-center items-center">
+        <div className="w-full max-w-[1180px] mx-4 lg:mx-[131px] mb-5 sm:mb-[167px] sm:grid sm:grid-cols-[230px_1fr] sm:gap-[28px]">
           <FilterOption />
           <Content />
         </div>
+        <ListProduct title="You may also like" />
       </div>
       <Newsietter />
     </DefaultLayout>
@@ -104,10 +107,34 @@ function FilterOption() {
 }
 
 /* ------------------------------------ Content ------------------------------------ */
+
 function Content() {
+  const page = 8;
+  /* ----- Handle pagination ----- */
+  const [currentButton, setCurrentButton] = useState<number>(1);
+  const [arrOfCurrButtons, setArrOfCurrButtons] = useState<number[]>([]);
+
+  const numberOfPages: number[] = [];
+  for (let i = 1; i <= page; i++) {
+    numberOfPages.push(i);
+  }
+
+  useEffect(() => {
+    let tempNumberOfPages = [...numberOfPages];
+    if (currentButton <= 2) {
+      tempNumberOfPages = tempNumberOfPages.slice(0, 3);
+    } else if (currentButton >= 3) {
+      tempNumberOfPages = tempNumberOfPages.slice(
+        currentButton - 2,
+        currentButton + 1
+      );
+    }
+    setArrOfCurrButtons(tempNumberOfPages);
+  }, [currentButton]);
+
   return (
     <div>
-      <div className="w-full flex flex-col items-center gap-5">
+      <div className="w-full px-[10px] pb-[30px] flex flex-col items-center gap-5">
         <div className="w-full h-[62px] pl-5 pr-[10px] hidden sm:flex justify-between items-center bg-white border border-gray-de rounded-md">
           <p className="text-[16px] leading-[19px]">
             12,911 items in
@@ -158,6 +185,52 @@ function Content() {
               </Button>
             </div>
           }
+        </div>
+      </div>
+      <div className="px-[10px] hidden sm:flex justify-end gap-[9px]">
+        <Dropdown
+          title="Show"
+          defaultValue={10}
+          option={[1, 5, 10, 20, 50, 100]}
+          className="w-[125px] py-0 h-10"
+        />
+        <div className="flex items-center">
+          <Button
+            className={`w-11 h-10 px-[10px] py-2 flex justify-center items-center rounded-l-md border border-gray-de ${
+              currentButton === 1 ? "text-gray-8b" : ""
+            }`}
+            onClick={() =>
+              setCurrentButton((prev) => (prev === 1 ? prev : prev - 1))
+            }
+          >
+            <NavArrowRightIcon className="rotate-180" />
+          </Button>
+
+          <div className="flex">
+            {arrOfCurrButtons.map((page) => (
+              <Button
+                key={page}
+                className={`w-11 h-10 flex justify-center items-center text-[16px] font-medium leading-[19px] border border-r-0 border-gray-de ${
+                  currentButton === page ? "bg-gray-ef text-gray-8b" : ""
+                }`}
+                onClick={() => setCurrentButton(page)}
+              >
+                {page}
+              </Button>
+            ))}
+          </div>
+          <Button
+            className={`w-11 h-10 px-[10px] py-2 flex justify-center items-center rounded-r-md border border-gray-de ${
+              currentButton === numberOfPages.length ? "text-gray-8b" : ""
+            }`}
+            onClick={() =>
+              setCurrentButton((prev) =>
+                prev === numberOfPages.length ? prev : prev + 1
+              )
+            }
+          >
+            <NavArrowRightIcon />
+          </Button>
         </div>
       </div>
     </div>
