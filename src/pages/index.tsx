@@ -295,7 +295,7 @@ function Inquiry() {
             <Dropdown
               option={category}
               defaultValue="Pcs"
-              sxSelect={"w-[111px] h-full"}
+              className={"w-[111px] h-full"}
             />
           </div>
           <Button className="p-[10.5px_16px] text-white text-[16px] leading-[19px] bg-primary rounded-md">
